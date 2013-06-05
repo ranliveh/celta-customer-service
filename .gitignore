@@ -4,3 +4,5 @@
 *.jar
 *.war
 *.ear
+/customer-viewfx/target/
+/customer-service/target/
