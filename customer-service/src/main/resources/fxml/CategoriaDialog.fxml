@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?scenebuilder-preview-i18n-resource ../messages.properties?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0000084472631" prefWidth="-1.0" xmlns:fx="http://javafx.com/fxml" fx:controller="br.com.celta.customer.view.controller.CategoriaDialogController">
+    <children>
+        <BorderPane id="inputForm" fx:id="inputPane" minHeight="130.99997792968497" prefHeight="137.99997792968497" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <bottom>
+                <VBox prefHeight="-1.0" prefWidth="600.0" spacing="3.0" BorderPane.alignment="CENTER">
+                    <children>
+                        <Separator prefWidth="200.0" />
+                        <HBox alignment="TOP_RIGHT" prefHeight="-1.0" prefWidth="600.0" spacing="5.0">
+                            <children>
+                                <Button fx:id="buttonNovo" mnemonicParsing="false" onAction="#handleOnNewAction" text="%common.button.new" />
+                                <Button fx:id="buttonSalvar" mnemonicParsing="false" onAction="#handleOnSaveAction" text="%common.button.save" />
+                                <Button fx:id="buttonCancelar" mnemonicParsing="false" onAction="#handleOnCancelAction" text="%common.button.cancel" />
+                                <Button fx:id="buttonLocalizar" mnemonicParsing="false" onAction="#handleOnLocalizarAction" text="%common.button.localizar" />
+                            </children>
+                            <padding>
+                                <Insets fx:id="x1" />
+                            </padding>
+                        </HBox>
+                    </children>
+                    <padding>
+                        <Insets top="5.0" />
+                    </padding>
+                </VBox>
+            </bottom>
+            <left>
+                <GridPane hgap="5.0" minHeight="52.0" padding="$x1" prefHeight="52.0" prefWidth="575.0" vgap="10.0">
+                    <children>
+                        <Separator prefWidth="200.0" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="0" />
+                        <Label text="%categoria.text.nome" GridPane.columnIndex="0" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+                        <TextField fx:id="textNome" prefHeight="20.0" prefWidth="540.0" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="1" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="heading" text="%categoria.title" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                    </children>
+                    <columnConstraints>
+                        <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="127.0" prefWidth="99.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="516.0" minWidth="10.0" prefWidth="201.0" />
+                        <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="516.0" minWidth="10.0" prefWidth="38.0" />
+                        <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="516.0" minWidth="10.0" prefWidth="66.0" />
+                        <ColumnConstraints maxWidth="206.0" prefWidth="151.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints maxHeight="20.0" minHeight="20.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="20.0" minHeight="20.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                </GridPane>
+            </left>
+            <padding>
+                <Insets bottom="8.0" left="10.0" right="15.0" top="8.0" />
+            </padding>
+        </BorderPane>
+    </children>
+    <stylesheets>
+        <URL value="@../styles/default.css" />
+    </stylesheets>
+</AnchorPane>

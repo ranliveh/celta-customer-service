@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?scenebuilder-preview-i18n-resource ../messages.properties?>
+
+<AnchorPane id="root-pane" prefHeight="179.0" prefWidth="303.0" xmlns:fx="http://javafx.com/fxml" fx:controller="br.com.celta.customer.view.controller.LoginDialogController">
+    <children>
+        <Pane id="" prefHeight="179.0" prefWidth="303.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <GridPane hgap="5.0" layoutX="1.0" layoutY="1.0" prefHeight="177.0" prefWidth="301.0" vgap="2.0">
+                    <children>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.rowSpan="2147483647" GridPane.valignment="CENTER">
+                            <children>
+                                <ImageView fitHeight="84.0" fitWidth="112.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../images/cadeado.png" />
+                                    </image>
+                                </ImageView>
+                            </children>
+                        </VBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.columnSpan="2147483647" GridPane.rowIndex="0" GridPane.rowSpan="3">
+                            <children>
+                                <Text id="textTitle" fill="linear-gradient(from 0.0% 0.0% to 100.0% 100.0%, 0x0000ffff 0.0%, 0x0000ffff 50.0%, 0x000000ff 100.0%)" fontSmoothingType="GRAY" strokeType="OUTSIDE" strokeWidth="0.0" text="%login.title" textAlignment="LEFT">
+                                    <effect>
+                                        <Shadow height="13.0" radius="6.0" width="13.0" />
+                                    </effect>
+                                    <font>
+                                        <Font name="System Bold Italic" size="24.0" />
+                                    </font>
+                                </Text>
+                            </children>
+                        </HBox>
+                        <Label text="%login.usuario" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                            <font>
+                                <Font name="System Bold" size="12.0" fx:id="x1" />
+                            </font>
+                        </Label>
+                        <Label font="$x1" text="%login.senha" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                        <PasswordField fx:id="textPassword" prefWidth="200.0" promptText="%login.senha.prompt" GridPane.columnIndex="2" GridPane.columnSpan="2147483647" GridPane.rowIndex="6" />
+                        <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.columnIndex="2" GridPane.columnSpan="2147483647" GridPane.rowIndex="8">
+                            <children>
+                                <Button fx:id="buttonLogin" mnemonicParsing="false" onAction="#loginAction" text="%login.button.login" />
+                                <Button fx:id="buttonCancelar" mnemonicParsing="false" onAction="#cancelAction" text="%common.button.cancel" />
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.columnSpan="2147483647" GridPane.rowIndex="9">
+                            <children>
+                                <Label fx:id="errorMessage" font="$x1" text="%login.errorMessage" textFill="RED" visible="true" />
+                            </children>
+                        </HBox>
+                        <TextField fx:id="textLogin" prefWidth="200.0" promptText="%login.usuario.prompt" GridPane.columnIndex="2" GridPane.columnSpan="2147483647" GridPane.rowIndex="4" />
+                    </children>
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <padding>
+                        <Insets bottom="10.0" right="15.0" top="5.0" />
+                    </padding>
+                    <rowConstraints>
+                        <RowConstraints maxHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="15.0" minHeight="15.0" prefHeight="15.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="15.0" minHeight="15.0" prefHeight="15.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="15.0" minHeight="15.0" prefHeight="15.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="15.0" minHeight="15.0" prefHeight="15.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="10.0" minHeight="7.0" prefHeight="7.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="32.0" minHeight="10.0" prefHeight="22.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="15.0" minHeight="15.0" prefHeight="15.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                </GridPane>
+            </children>
+        </Pane>
+    </children>
+    <stylesheets>
+        <URL value="@../styles/default.css" />
+    </stylesheets>
+</AnchorPane>

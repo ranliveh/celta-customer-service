@@ -1,0 +1,127 @@
+/* 
+    Document   : default
+    Created on : 20/08/2012, 10:21:31
+    Author     : Ranlive Hrysyk
+*/
+
+.root, .scroll-pane { 
+    display: block;
+    -fx-background-color: white;
+}
+
+.text-field, .text-area {
+    -fx-background-radius: 6, 5, 4;
+    -fx-border-radius: 6, 5, 4;
+}
+
+.text-area {
+    -fx-padding: 6 5 6 5;}
+
+.text-field:focused {
+    -fx-prompt-text-fill: rgb(128,128,128);
+}
+
+.text-field:focused, .text-area:focused {
+    -fx-prompt-text-fill: rgb(128,128,128);
+    -fx-background-color: rgb(235, 235, 235, 0.5), rgb(0, 0, 0, 0.4), rgb(255, 255, 255);
+}
+
+.titled-pane {
+    -fx-animated: true;
+    -fx-alignment: BASELINE_LEFT;	
+    -fx-text-fill: white;
+}
+
+.titled-pane .title {
+    -fx-border-radius: 0;
+    -fx-background-radius: 0;
+    -fx-display: block;
+    -fx-border-insets: -0.7px;
+    -fx-background-color: linear-gradient(from 0px 0px to 0px 50px, #727A86, #616975, #616975, #505864);
+    -fx-border-color: black;
+    -fx-border-style: solid;
+    -fx-border-width: 1px;
+    -fx-font: bold 14px System;
+    -fx-content-display: left;
+}
+
+.titled-pane .title:hover, #menu-button:hover {    
+    -fx-background-color: linear-gradient(from 0px 0px to 0px 50px, #45C7EB, #35AFE3 50%, #35AFE3 99%, #2698DB);
+    -fx-border-color: #103C56;
+}
+
+.titled-pane .title .arrow-button .arrow {
+    -fx-background-color: transparent;
+}
+
+.titled-pane .content {   
+    -fx-node-hpos: left;
+    -fx-background-color: transparent;
+    -fx-padding: 0px;
+}
+
+.heading {
+    -fx-font: bold 14px System;
+}
+
+.heading-minor {
+    -fx-font: bold 12px System;
+}
+
+.button {
+    -fx-base: #32373D;
+    -fx-font: bold 12px System;
+    -fx-text-fill: white;
+}
+
+.list-cell:empty {
+    -fx-background-color: transparent;
+}
+
+.list-chamados, list-iteracoes {
+    -fx-background-color: transparent;
+}
+
+.list-chamados .list-cell, .list-iteracoes .list-cell {
+    -fx-padding: 1em;
+    -fx-text-fill: black;   
+    -fx-cell-size: 50;
+}
+
+.list-chamados .list-cell:filled:selected:focused, .list-chamados .list-cell:filled:selected,
+.list-iteracoes .list-cell:filled:selected:focused, .list-iteracoes .list-cell:filled:selected {
+    -fx-background-color: linear-gradient(from 0px 0px to 0px 50px, #45C7EB, #35AFE3 50%, #35AFE3 99%, #2698DB);
+    -fx-border-color: #103C56;
+}
+
+.text-iteracao {
+    -fx-background-color: transparent, transparent, transparent;
+    -fx-border-color: transparent;
+}
+
+#root-pane {
+    display: block;
+    -fx-border-color: black;
+    -fx-border-style: solid;
+    -fx-border-width: 1px;
+}
+
+#main-top, #main-left {
+    -fx-background-color: #32373D;
+}
+
+#menu-box {
+    -fx-padding: 1px;
+    -fx-border-color: #33373D;
+    -fx-border-width: 0.05px;
+}
+
+#menu-button {
+    -fx-alignment: CENTER_LEFT;
+    -fx-border-radius: 0;
+    -fx-background-radius: 0;
+    -fx-background-color: white;
+    -fx-border-color: #33373D;
+    -fx-border-width: 0.05px;
+    -fx-text-fill: #32373D;
+}

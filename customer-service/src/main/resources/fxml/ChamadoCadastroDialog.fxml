@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?scenebuilder-preview-i18n-resource ../messages.properties?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="412.999977929685" prefWidth="-1.0" xmlns:fx="http://javafx.com/fxml" fx:controller="br.com.celta.customer.view.controller.ChamadoCadastroDialogController">
+  <children>
+    <BorderPane fx:id="inputPane" prefHeight="413.00007792968245" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <bottom>
+        <VBox prefHeight="-1.0" prefWidth="600.0" spacing="3.0" BorderPane.alignment="CENTER">
+          <children>
+            <Separator prefWidth="200.0" />
+            <HBox alignment="TOP_RIGHT" prefHeight="-1.0" prefWidth="600.0" spacing="5.0">
+              <children>
+                <Button fx:id="buttonSalvar" mnemonicParsing="false" onAction="#handleOnSaveAction" text="%common.button.save" />
+                <Button fx:id="buttonCancelar" mnemonicParsing="false" onAction="#handleOnCancelAction" text="%common.button.cancel" />
+              </children>
+              <padding>
+                <Insets fx:id="x1" />
+              </padding>
+            </HBox>
+          </children>
+          <padding>
+            <Insets top="5.0" />
+          </padding>
+        </VBox>
+      </bottom>
+      <center>
+        <GridPane alignment="TOP_LEFT" hgap="5.0" prefHeight="147.5" vgap="10.0">
+          <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="5.0" GridPane.columnIndex="0" GridPane.columnSpan="2147483647" GridPane.rowIndex="0">
+              <children>
+                <Label text="%chamado.cadastro.solicitacao.title">
+                  <font>
+                    <Font name="System Bold" size="12.0" />
+                  </font>
+                </Label>
+                <Separator prefWidth="200.0" HBox.hgrow="ALWAYS" />
+              </children>
+            </HBox>
+            <Label text="%chamado.cadastro.solicitacao.problema" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <Label text="%chamado.solicitacao.iteracao" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <TextArea fx:id="textSolicitacao" prefWidth="200.0" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextArea fx:id="textIteracao" prefWidth="200.0" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+          </children>
+          <columnConstraints>
+            <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="285.0" minWidth="10.0" prefWidth="118.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="452.0" minWidth="10.0" prefWidth="452.0" />
+          </columnConstraints>
+          <rowConstraints>
+            <RowConstraints maxHeight="15.0" minHeight="15.0" prefHeight="15.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="80.0" minHeight="80.0" prefHeight="80.0" valignment="TOP" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="80.0" minHeight="80.0" prefHeight="80.0" valignment="TOP" vgrow="SOMETIMES" />
+          </rowConstraints>
+        </GridPane>
+      </center>
+      <padding>
+        <Insets bottom="8.0" left="10.0" right="15.0" top="8.0" />
+      </padding>
+      <top>
+        <GridPane fx:id="gridCadastro" hgap="5.0" minHeight="170.0" prefHeight="-1.0" prefWidth="575.0" vgap="10.0">
+          <children>
+            <Text id="titleArea" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="heading" text="%chamado.cadastro.title" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.rowIndex="0" />
+            <Separator prefWidth="521.0" GridPane.columnIndex="2" GridPane.columnSpan="2147483647" GridPane.rowIndex="0" />
+            <Label text="%chamado.cliente" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <Label text="%chamado.title" GridPane.columnIndex="0" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+            <Label text="%chamado.categoria" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+            <Label text="%chamado.classificacao" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+            <Label text="%chamado.dataAbertura" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+            <Label text="%chamado.horaAbertura" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+            <Label text="%chamado.prazo" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+            <TextField fx:id="textCliente" disable="false" editable="false" prefHeight="20.0" prefWidth="415.0" GridPane.columnIndex="1" GridPane.columnSpan="5" GridPane.rowIndex="1" />
+            <TextField fx:id="textTitle" prefHeight="20.0" prefWidth="540.0" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="2" />
+            <TextField fx:id="textCategoria" disable="false" editable="false" prefHeight="20.0" prefWidth="40.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="3" />
+            <TextField fx:id="textClassifcacao" disable="false" editable="false" prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+          </children>
+          <columnConstraints>
+            <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="127.0" prefWidth="127.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="516.0" minWidth="0.0" prefWidth="41.0" />
+            <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="516.0" minWidth="10.0" prefWidth="110.0" />
+            <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="16.0" minWidth="16.0" prefWidth="16.0" />
+            <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="218.0" prefWidth="108.0" />
+            <ColumnConstraints maxWidth="328.0" prefWidth="127.0" />
+            <ColumnConstraints maxWidth="16.0" minWidth="16.0" prefWidth="16.0" />
+          </columnConstraints>
+          <rowConstraints>
+            <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="20.0" minHeight="16.0" prefHeight="20.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES" />
+          </rowConstraints>
+        </GridPane>
+      </top>
+    </BorderPane>
+  </children>
+  <stylesheets>
+    <URL value="@../styles/default.css" />
+  </stylesheets>
+</AnchorPane>

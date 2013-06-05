@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?scenebuilder-preview-i18n-resource ../messages.properties?>
+
+<AnchorPane id="root-pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600.0" minWidth="800.0" prefHeight="600.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml" fx:controller="br.com.celta.customer.view.controller.MainWindowController">
+    <children>
+        <BorderPane prefHeight="600.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <center>
+                <BorderPane prefHeight="200.0" prefWidth="200.0">
+                    <bottom>
+                        <HBox id="root-pane" alignment="CENTER_RIGHT" prefHeight="32.0" prefWidth="692.0">
+                            <children>
+                                <Hyperlink fx:id="textNovoAtendimento" onMouseClicked="#handleOnNewChamadoAction" text="%main.chamado.novo">
+                                    <font>
+                                        <Font name="System Bold Italic" size="12.0" fx:id="x1" />
+                                    </font>
+                                </Hyperlink>
+                            </children>
+                            <padding>
+                                <Insets right="10.0" />
+                            </padding>
+                        </HBox>
+                    </bottom>
+                    <center>
+                        <HBox alignment="CENTER" prefHeight="547.0" prefWidth="673.0">
+                            <children>
+                                <ListView fx:id="listChamados" prefHeight="200.0" prefWidth="200.0" styleClass="list-chamados" translateX="-1.0" HBox.hgrow="ALWAYS" />
+                            </children>
+                            <BorderPane.margin>
+                                <Insets fx:id="x2" />
+                            </BorderPane.margin>
+                        </HBox>
+                    </center>
+                    <top>
+                        <HBox id="root-pane" prefHeight="26.0" prefWidth="-1.0" translateX="0.0">
+                            <children>
+                                <HBox alignment="CENTER_LEFT" prefHeight="26.0" prefWidth="274.0" spacing="5.0">
+                                    <children>
+                                        <Label font="$x1" text="%main.filter" />
+                                        <ComboBox fx:id="comboFilter" minHeight="20.0" prefWidth="215.0" />
+                                    </children>
+                                    <padding>
+                                        <Insets left="10.0" right="10.0" />
+                                    </padding>
+                                </HBox>
+                                <HBox fx:id="boxFilter" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                            </children>
+                        </HBox>
+                    </top>
+                </BorderPane>
+            </center>
+            <left>
+                <VBox id="main-left" alignment="TOP_LEFT" prefHeight="577.0" prefWidth="-1.0" BorderPane.margin="$x2">
+                    <children>
+                        <TitledPane animated="false" expanded="false" text="%main.menu.cadastro">
+                            <content>
+                                <VBox id="menu-box" prefHeight="-1.0" prefWidth="100.0">
+                                    <children>
+                                        <Button id="menu-button" fx:id="buttonEmpresa" mnemonicParsing="false" onAction="#handleOnDadosAction" prefWidth="217.0" text="%main.menu.cadastro.empresa" />
+                                        <Button id="menu-button" fx:id="buttonCliente" mnemonicParsing="false" onAction="#handleOnClienteAction" prefWidth="217.0" text="%main.menu.cadastro.cliente" />
+                                        <Button id="menu-button" fx:id="buttonAtendente" mnemonicParsing="false" onAction="#handleOnAtendenteAction" prefWidth="217.0" text="%main.menu.cadastro.atendente" />
+                                        <Button id="menu-button" fx:id="buttonClassificacao" mnemonicParsing="false" onAction="#handleOnClassificacaoAction" prefWidth="217.0" text="%main.menu.cadastro.classificacao" />
+                                        <Button id="menu-button" fx:id="buttonCategoria" mnemonicParsing="false" onAction="#handleOnCategoriaAction" prefWidth="217.0" text="%main.menu.cadastro.categoria" />
+                                    </children>
+                                </VBox>
+                            </content>
+                        </TitledPane>
+                        <TitledPane animated="false" expanded="false" text="%main.menu.relatorio">
+                            <content>
+                                <VBox id="menu-box" prefHeight="-1.0" prefWidth="100.0">
+                                    <children>
+                                        <Button id="menu-button" mnemonicParsing="false" onAction="#handleOnRelatorioClienteAction" prefWidth="217.0" text="%main.menu.cadastro.cliente" />
+                                        <Button id="menu-button" mnemonicParsing="false" onAction="#handleOnRelatorioAtendenteAction" prefWidth="217.0" text="%main.menu.cadastro.atendente" />
+                                    </children>
+                                </VBox>
+                            </content>
+                        </TitledPane>
+                        <TitledPane animated="false" collapsible="true" content="$null" expanded="false" onMouseClicked="#handleOnQuitAction" text="%main.menu.quit" />
+                    </children>
+                    <padding>
+                        <Insets right="2.0" />
+                    </padding>
+                </VBox>
+            </left>
+            <top>
+                <HBox id="main-top" alignment="CENTER_LEFT" prefHeight="21.0" prefWidth="800.0">
+                    <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="21.0" prefWidth="598.0">
+                            <children>
+                                <Text fx:id="textTitle" fill="WHITE" font="$x1" strokeType="OUTSIDE" strokeWidth="0.0" text="%main.title" translateX="5.0" />
+                            </children>
+                            <padding>
+                                <Insets left="5.0" />
+                            </padding>
+                        </HBox>
+                    </children>
+                </HBox>
+            </top>
+        </BorderPane>
+    </children>
+    <stylesheets>
+        <URL value="@../styles/default.css" />
+    </stylesheets>
+</AnchorPane>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?scenebuilder-preview-i18n-resource ../messages.properties?>
+
+<AnchorPane id="root-pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="327.0" prefWidth="400.0" xmlns:fx="http://javafx.com/fxml" fx:controller="br.com.celta.customer.view.controller.LocalizarDialogController">
+    <children>
+        <VBox fx:id="inputPane" prefHeight="377.0" prefWidth="400.0" AnchorPane.bottomAnchor="23.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <HBox id="" alignment="CENTER" minHeight="-Infinity" prefHeight="21.0" prefWidth="400.0">
+                    <children>
+                        <Text id="title-text" fx:id="textTitle" fill="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="dialog-title-text" text="%localizar.title">
+                            <effect>
+                                <Shadow height="1.0" radius="0.0" width="1.0" />
+                            </effect>
+                            <font>
+                                <Font name="System Bold Italic" size="14.0" />
+                            </font>
+                        </Text>
+                    </children>
+                    <padding>
+                        <Insets />
+                    </padding>
+                </HBox>
+                <HBox alignment="CENTER" prefHeight="30.0" prefWidth="400.0" spacing="5.0">
+                    <children>
+                        <TextField fx:id="textSearch" minHeight="-Infinity" prefWidth="319.0" promptText="" HBox.hgrow="ALWAYS" />
+                    </children>
+                    <padding>
+                        <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                    </padding>
+                </HBox>
+                <HBox minHeight="-Infinity" prefHeight="219.0" prefWidth="400.0">
+                    <children>
+                        <ListView fx:id="listView" onMouseClicked="#handleOnClickListAction" prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                    </children>
+                    <padding>
+                        <Insets left="10.0" right="10.0" />
+                    </padding>
+                </HBox>
+                <HBox alignment="CENTER" prefHeight="-1.0" prefWidth="400.0">
+                    <children>
+                        <Text fx:id="textMessage" fill="#1000cc" strokeType="OUTSIDE" strokeWidth="0.0" text="%localizar.message.empty">
+                            <font>
+                                <Font name="System Bold Italic" size="12.0" />
+                            </font>
+                        </Text>
+                    </children>
+                </HBox>
+                <VBox prefHeight="-1.0" prefWidth="600.0" spacing="3.0">
+                    <children>
+                        <Separator prefWidth="200.0" />
+                        <HBox alignment="TOP_RIGHT" prefHeight="-1.0" prefWidth="600.0" spacing="5.0">
+                            <children>
+                                <Button id="buttonCancelar" mnemonicParsing="false" onAction="#handleOnCancelAction" text="%common.button.cancel" />
+                            </children>
+                            <padding>
+                                <Insets left="10.0" right="10.0" />
+                            </padding>
+                        </HBox>
+                    </children>
+                    <padding>
+                        <Insets top="5.0" />
+                    </padding>
+                </VBox>
+            </children>
+        </VBox>
+    </children>
+    <stylesheets>
+        <URL value="@../styles/default.css" />
+    </stylesheets>
+</AnchorPane>

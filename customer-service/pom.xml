@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>br.com.celta</groupId>
+    <artifactId>customer-service</artifactId>
+    <version>1.0.0</version>
+    <packaging>jar</packaging>
+
+    <name>Customer Servce</name>
+    <description></description>
+    <url></url>
+    
+    <organization>
+        <name>Celta Sistemas Ltda</name>
+        <url>http://www.celtasistemas.com.br</url>
+    </organization>
+    
+    <developers>
+        <developer>
+            <name>Ranlive HRYSYK</name>
+            <email>ranliveh[AT]gmail[DOT]com</email>
+        </developer>
+    </developers>
+    
+    <parent>
+        <groupId>br.gov.frameworkdemoiselle</groupId>
+        <artifactId>demoiselle-se-parent</artifactId>
+        <version>2.2.2</version>
+    </parent>
+    
+    <properties>
+        <java.version>1.7</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <javafx.runtime>${java.home}/lib/jfxrt.jar</javafx.runtime>
+        <javafx.ant>${env.JAVA_HOME}/lib/ant-javafx.jar</javafx.ant>
+        <javafx.version>2.2.21</javafx.version>
+        <application.mainClass>br.com.celta.customer.ApplicationLauncher</application.mainClass>
+    </properties>
+    
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.5.1</version>
+                <configuration>
+                    <showDeprecation>true</showDeprecation>
+                    <showWarnings>true</showWarnings>
+                    <fork>true</fork>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <executable>${env.JAVA_HOME}/bin/javac</executable>
+                </configuration>
+            </plugin>
+            
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.4</version>
+                <configuration>
+                    <archive>
+                        <index>true</index>
+                        <manifestEntries>
+                            <JavaFX-Version>${javafx.version}+</JavaFX-Version>
+                            <Main-Class>${application.mainClass}</Main-Class>
+                            <implementation-version>1.0</implementation-version>
+                            <JavaFX-Application-Class>${application.mainClass}</JavaFX-Application-Class>
+                            <Class-Path>./${javafx.runtime}</Class-Path>
+                        </manifestEntries>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+            
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>2.7</version>
+                <executions>
+                    <execution>
+                        <id>copy-dependencies</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <outputDirectory>${project.build.directory}/dist/lib/</outputDirectory>
+                                    <overwritereleases>false</overwritereleases>
+                                    <overwritesnapshots>false</overwritesnapshots>
+                                    <overwriteifnewer>true</overwriteifnewer>
+                                    <excludeScope>system</excludeScope>
+                                    <groupId>${project.groupId}</groupId>
+                                    <artifactId>${project.artifactId}</artifactId>
+                                    <version>${project.version}</version>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>     
+            
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>1.7</version>
+                <executions>
+                    <execution>
+                        <id>create-javafx-packages</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <target></target>
+                        </configuration>
+                    </execution>
+                </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.sun.javafx</groupId>
+                        <artifactId>javafx-ant</artifactId>
+                        <version>${javafx.version}</version>
+                        <scope>system</scope>
+                        <systemPath>${javafx.ant}</systemPath>
+                    </dependency>
+                </dependencies>
+            </plugin>      
+        </plugins>
+    </build>
+    
+    <dependencies>
+        <dependency>
+            <groupId>com.oracle</groupId>
+            <artifactId>javafx</artifactId>
+            <version>${javafx.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>br.gov.frameworkdemoiselle.component</groupId>
+            <artifactId>demoiselle-junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+        </dependency>
+        <dependency>            
+            <groupId>br.gov.frameworkdemoiselle</groupId>
+            <artifactId>demoiselle-jpa</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.persistence</groupId>
+            <artifactId>eclipselink</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>9.2-1002.jdbc4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jfxtras</groupId>
+            <artifactId>jfxtras-labs</artifactId>
+            <version>2.2-r6-SNAPSHOT</version>
+        </dependency>
+        <!--        <dependency>
+            <groupId>net.sf.jasperreports</groupId>
+            <artifactId>jasperreports</artifactId>
+            <version>5.1.0</version>
+        </dependency>-->
+        <dependency>
+            <groupId>br.gov.frameworkdemoiselle.component</groupId>
+            <artifactId>demoiselle-report</artifactId>
+        </dependency>
+    </dependencies>
+    
+    <repositories>
+        <!--        <repository>
+            <id>net.sf.jasperreports</id>
+            <url>http://repo1.maven.org/maven2/net/sf/jasperreports/jasperreports/</url>
+        </repository>        -->
+        <repository>
+            <id>jfxtras</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+        </repository> 
+        <repository>
+            <id>jboss</id>
+            <name>hibernate</name>
+            <url>https://repository.jboss.org/nexus/content/groups/public/</url>
+        </repository>
+        <repository>
+            <id>demoiselle.sourceforge.net-release</id>
+            <url>http://demoiselle.sourceforge.net/repository/release</url>
+        </repository>           
+    </repositories>
+    
+</project>
