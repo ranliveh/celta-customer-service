@@ -13,7 +13,6 @@ import javax.inject.Singleton;
 @Singleton
 public class ApplicationMainWindowProvider {
 
-    private static final long serialVersionUID = 1L;
     private Window mainWindow;
 
     public Window getMainWindow() {

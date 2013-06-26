@@ -14,7 +14,6 @@ import javax.inject.Singleton;
 @Singleton
 public class ApplicationAtendenteProvider {
 
-    private static final long serialVersionUID = 1L;
     @Inject
     private SecurityContext securityContext;
     @Inject

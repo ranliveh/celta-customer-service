@@ -230,7 +230,7 @@ public class ViewManager {
     /**
      * Carrega e mostra o diálogo de novo chamado.
      */
-    public void showNewChamadoDialog(@Observes final NewChamado event) {
+    public void showCategoriaDialog(@Observes final NewChamado event) {
         final Window owner = mainWindowProvider.getMainWindow();
         final Parent root = parentLoader.load("ChamadoCadastroDialog");
         dialogs.showDialog(owner, root, new Dialogs.OnShownAction() {
@@ -244,7 +244,7 @@ public class ViewManager {
     /**
      * Carrega e mostra o diálogo de edição de chamado.
      */
-    public void showEditChamadoDialog(@Observes final EditChamado event) {
+    public void showCategoriaDialog(@Observes final EditChamado event) {
         final Window owner = mainWindowProvider.getMainWindow();
         final Parent root = parentLoader.load("ChamadoEdicaoDialog");
         dialogs.showDialog(owner, root, new Dialogs.OnShownAction() {

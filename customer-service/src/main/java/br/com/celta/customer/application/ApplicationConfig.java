@@ -1,7 +1,7 @@
 package br.com.celta.customer.application;
 
 import br.gov.frameworkdemoiselle.configuration.Configuration;
-import java.io.Serializable;
+import javax.validation.constraints.NotNull;
 
 /**
  * ApplicationConfig.class
@@ -9,9 +9,9 @@ import java.io.Serializable;
  * @author Ranlive Hrysyk
  */
 @Configuration(resource = "system")
-public class ApplicationConfig implements Serializable {
+public class ApplicationConfig {
 
-    private static final long serialVersionUID = 1L;
+    @NotNull
     private String applicationTitle;
     private Double applicationWidth;
     private Double applicationHeigth;

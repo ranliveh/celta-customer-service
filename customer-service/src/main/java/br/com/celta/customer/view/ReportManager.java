@@ -33,10 +33,10 @@ public class ReportManager {
     private AtendenteDAO atendenteDAO;
     @Inject
     @Path("reports/Clientes.jasper")
-    private Report relatorioClientes;
+    private Report clientes;
     @Inject
     @Path("reports/Atendentes.jasper")
-    private Report relatorioAtendentes;
+    private Report atendentes;
 
     /**
      * Mostra o relatório de cadastro de clientes.
@@ -45,8 +45,8 @@ public class ReportManager {
         try {
             List<Cliente> list = clienteDAO.findAll();
             Map<String, Object> parametros = new HashMap<>();
-            relatorioClientes.prepare(list, parametros);
-            JasperViewer.viewReport((JasperPrint) relatorioClientes.getReportObject(), false);
+            clientes.prepare(list, parametros);
+            JasperViewer.viewReport((JasperPrint) clientes.getReportObject(), false);
         } catch (Exception exception) {
             ExceptionUtils.throwCustomerException(exception, true);
         }
@@ -60,8 +60,8 @@ public class ReportManager {
         try {
             List<Atendente> list = atendenteDAO.findAll();
             Map<String, Object> parametros = new HashMap<>();
-            relatorioAtendentes.prepare(list, parametros);
-            JasperViewer.viewReport((JasperPrint) relatorioAtendentes.getReportObject(), false);
+            atendentes.prepare(list, parametros);
+            JasperViewer.viewReport((JasperPrint) atendentes.getReportObject(), false);
         } catch (Exception exception) {
             ExceptionUtils.throwCustomerException(exception, true);
         }

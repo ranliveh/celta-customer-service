@@ -9,7 +9,6 @@ import br.com.celta.customer.entity.Chamado;
  */
 public class ApplicationChamadoProvider {
 
-    private static final long serialVersionUID = 1L;
     private static ApplicationChamadoProvider instance;
     private Chamado editingChamado;
 

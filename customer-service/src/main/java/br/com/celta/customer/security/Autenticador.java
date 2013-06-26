@@ -45,7 +45,7 @@ public class Autenticador implements Authenticator {
 
     @Override
     public User getUser() {
-        if (this.isLoggedIn) {
+//        if (this.isLoggedIn) {
             return new User() {
                 @Override
                 public String getId() {
@@ -61,8 +61,8 @@ public class Autenticador implements Authenticator {
                 public void setAttribute(Object key, Object value) {
                 }
             };
-        }
+//        }
 
-        return null;
+//        return null;
     }
 }

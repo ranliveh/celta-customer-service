@@ -9,6 +9,7 @@ import br.com.celta.customer.bus.events.UpdateEmpresa;
 import br.com.celta.customer.bus.events.UpdatePermission;
 import br.com.celta.customer.exceptions.CustomerException;
 import br.com.celta.customer.factory.ParentLoaderFactory;
+import br.com.celta.customer.utils.ExceptionUtils;
 import br.com.celta.customer.view.controller.MainWindowController;
 import br.gov.frameworkdemoiselle.annotation.Name;
 import br.gov.frameworkdemoiselle.security.SecurityContext;
@@ -37,7 +38,6 @@ import javax.inject.Singleton;
 @Singleton
 public class ApplicationStarter {
 
-    private static final long serialVersionUID = 1L;
     @Inject
     private FXMLLoader loader;
     @Inject
@@ -67,6 +67,7 @@ public class ApplicationStarter {
     }
 
     private void configureStage(final Stage stage) {
+        String title = config.getApplicationTitle();
         stage.setScene(new Scene(loadMainWindow(), config.getApplicationWidth(), config.getApplicationHeigth(), Color.BLACK));
         stage.initStyle(StageStyle.UNDECORATED);
         stage.setResizable(false);

@@ -20,7 +20,6 @@ import javax.inject.Singleton;
 @Singleton
 public class ApplicationExceptionProvider {
 
-    private static final long serialVersionUID = 1L;
     private ObservableList<CustomerException> exceptions;
 
     @PostConstruct
